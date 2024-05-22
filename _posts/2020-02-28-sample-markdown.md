@@ -1,16 +1,14 @@
 ---
 layout: post
 title: Implementing the core facilities for containers in xv6
-subtitle: There's lots to learn!
-gh-repo: https://github.com/yusefjawad03/project-23-xv6
-gh-badge: [star, fork, follow]
+subtitle: providing a subset of the functionality provided by software like Docker
 tags: [C, xv6, kernel]
 comments: true
 mathjax: true
 ---
 
 {: .box-success}
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/tables/etc.<br/>I also encourage you to look at the [code that created this post](https://raw.githubusercontent.com/daattali/beautiful-jekyll/master/_posts/2020-02-28-sample-markdown.md) to learn some more advanced tips about using markdown in Beautiful Jekyll.
+The main functionality of this project is that I implemented a container infrastructure for xv6 UNIX. I have linked the [github](https://github.com/yusefjawad03/project-23-xv6) for this project.
 
 **Here is some bold text**
 
@@ -18,14 +16,14 @@ This is a demo post to show you how to write blog posts with markdown.  I strong
 
 [This is a link to a different site](https://deanattali.com/) and [this is a link to a section inside this page](#local-urls).
 
-Here's a table:
+Here's the four components:
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+| Modules | Next Description | 
+| :------ |:--- |
+| Container Manager | Six | 
+| Shared Memory | Eleven | 
+| Synchronization | Eight | 
+| Scheduler | Three | 
 
 You can use [MathJax](https://www.mathjax.org/) to write LaTeX expressions. For example:
 When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
