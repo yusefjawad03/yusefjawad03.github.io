@@ -1,18 +1,37 @@
 ---
 layout: post
-title: Flake it till you make it
-subtitle: Excerpt from Soulshaping by Jeff Brown
+title: University Webpage Project
+subtitle: A functional application and course registration university page
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [books, test]
-author: Sharon Smith and Barry Simpson
+tags: [SQL, Flask, Python, AWS]
 ---
 
-Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+https://github.com/yusefjawad03/uni-webpage
 
-The truth is that no one else can definitively know the path we are here to walk. It’s tempting to listen—many of us long for the omnipotent other—but unless they are genuine psychic intuitives, they can’t know. All others can know is their own truth, and if they’ve actually done the work to excavate it, they will have the good sense to know that they cannot genuinely know anyone else’s. Only soul knows the path it is here to walk. Since you are the only one living in your temple, only you can know its scriptures and interpretive structure.
+Utilizing Python, Flask, and MySQL, this university webpage which was completed as a group of 3 emulates the functions of a university webpage with a Minecraft theme, allowing users to apply to the university (inputting all necessary information), and allowing faculty with separate user-specific accounts to accept or reject these students. Then, accepted students can pay their deposit, subsequently register for courses, and engage in other features such as a chat room and rating professors. Images of the webpage can be found in the final-report.md file.
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
+Desgin Features:
+Navigation bar: Allows the user to return to their "home" page at all times, access their personal information page, and quickly log out.
+We split some routes/modules (like user management, transcripts, and student management) into their own files/Blueprints to increase readability of our code, maintain consistent URL structures, more easily identify errors, and collaborate on code better.
+In an effort to reuse as much code as possible, we created a base HTML template that was included on (almost) every other template. We also tried to use macros wherever possible to save modularize our HTML as much as possible.
+This decision also affected how user roles with more permissions (such as grad secretaries and sysadmins) access different functiions of the system; rather than having one list of all users with specific functions for each user based on the user type, they access different index pages for different functions (i.e. alumni list vs. student list vs. user list).
+We used Bootstrap as our styling framework so that we could spend the majority of our time developing functionality and not as much defining custom styling to make our advising system user-friendly. We also used DataTables to improve our tables (to allow for searching/pagination/sorting).
+We added client-side validation to forms wherever possible so as to give users more descriptive feedback on their inputs before submitting the form data to the back-end. (Validation, often more in-depth, was also done on the back-end.)
+The applications page was mainly just the front of the website and most additions were made for the applicant user type, with some being added to existing faculty and gs users
+It was assumed anyone could access the recommendation letter page as long as they had the email that a letter had been requested of. It was also assumed that the transcript for applicants does not affect them as students, and that the transcript for applicants is simply just marked as received or not received in the system.
+We had to adjust the course table from reg as it stored prereqs in a way that vialoated normal form, so we created a prereq table for a many to many relationship
+We had to make some considerations about account type, we do not allow a user to have multiple roles. we believe this may not be the most efficent method but it makes leakage and edge case errors less possible. with the time we had, we believe this was neccesary.
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+Aditional Features:
+Alumni Chatroom:
+The alumni chatroom enables graduated students to chat to eachother. The messages are stored through the databse which lets each user logged on the chat to be able to see what is happening in conversation.
+Screen Shot 2023-05-03 at 9 53 17 PM
+
+Student-Student and Professor-Student Messaging:
+Students can click view classmates to see their classmates, the student can then click the message button next to all of their classmates to message them indivudally, which they will receive in thre inbox. A professor can also see a list of their students and message them as well.
+
+Rate My professor/courses:
+Students can look at their previous professors/courses from their home screen. They can rate each of them out of 5 and leave a comment.
+The course list and professr list now have buttons that show the professors/courses ratings
