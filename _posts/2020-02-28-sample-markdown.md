@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Sample blog post to learn markdown tips
+title: Implementing the core facilities for containers in xv6
 subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
+gh-repo: https://github.com/yusefjawad03/project-23-xv6
 gh-badge: [star, fork, follow]
-tags: [test]
+tags: [C, xv6, kernel]
 comments: true
 mathjax: true
-author: Bill Smith
 ---
 
 {: .box-success}
