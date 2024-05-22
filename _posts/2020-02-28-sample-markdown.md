@@ -18,70 +18,14 @@ The main functionality of this project is that I implemented a container infrast
 
 Here's the four components:
 
-| Modules | Next Description | 
+| Modules | Description | 
 | :------ |:--- |
-| Container Manager | Six | 
-| Shared Memory | Eleven | 
-| Synchronization | Eight | 
-| Scheduler | Three | 
+| Container Manager | Uses the kernel API and your container-specific extensions to the kernel, which creates and manages new containers. | 
+| Shared Memory | memory support for communication between the CM, and the processes that are using the CM’s container support (e.g. dockv6). | 
+| Synchronization | provide synchronization on a shared buffer | 
+| Scheduler | adds multiple priorities, and schedule the highest priority thread at any point in time. | 
 
-You can use [MathJax](https://www.mathjax.org/) to write LaTeX expressions. For example:
-When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-
-How about a yummy crepe?
-
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg)
-
-It can also be centered!
-
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
-
-## Local URLs in project sites {#local-urls}
+## Sumamry {#local-urls}
 
 When hosting a *project site* on GitHub Pages (for example, `https://USERNAME.github.io/MyProject`), URLs that begin with `/` and refer to local files may not work correctly due to how the root URL (`/`) is interpreted by GitHub Pages. You can read more about it [in the FAQ](https://beautifuljekyll.com/faq/#links-in-project-page). To demonstrate the issue, the following local image will be broken **if your site is a project site:**
 
